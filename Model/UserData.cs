@@ -1,14 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.ComponentModel;
 using System.IO;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using Newtonsoft.Json;
 
 namespace JunT3.Model
 {
@@ -32,12 +28,12 @@ namespace JunT3.Model
         {
             try
             {
-                string[] tempPathFile = Directory.GetFiles(Environment.CurrentDirectory + "\\TestData");
+                string[] tempPathFile = Directory.GetFiles(Environment.CurrentDirectory + "\\TestData"); //Путь к json файликам
                 List<UserData> tempUserDataList = new List<UserData>();
                 for (int i = 0; i < tempPathFile.Length; i++)
                 {
                     using (StreamReader sr = new StreamReader(tempPathFile[i]))
-                    { 
+                    {
                         tempUserDataList.AddRange(JsonConvert.DeserializeObject<List<UserData>>(sr.ReadToEnd()));
                         Console.WriteLine(tempUserDataList.Count);
                     }
@@ -53,7 +49,7 @@ namespace JunT3.Model
         }
 
         //Приведенные данных в вид key:value, где key фио человека, а value его результаты
-        public static Dictionary<string,List<UserData>> SortedUserData(List<UserData> userData)
+        public static Dictionary<string, List<UserData>> SortedUserData(List<UserData> userData)
         {
             Dictionary<string, List<UserData>> tempDictionary = new Dictionary<string, List<UserData>>();
 
@@ -61,7 +57,7 @@ namespace JunT3.Model
             {
                 if (!tempDictionary.ContainsKey(userData[i].User))
                 {
-                    tempDictionary.Add(userData[i].User, new List<UserData>(){userData[i]});
+                    tempDictionary.Add(userData[i].User, new List<UserData>() { userData[i] });
                 }
                 else
                 {
@@ -72,8 +68,8 @@ namespace JunT3.Model
         }
 
         public UserData()
-        {   
-            
+        {
+
         }
 
         public UserData(int rank, string user, string status, int steps)
@@ -102,7 +98,7 @@ namespace JunT3.Model
                 user = value;
                 OnPropertyChanged("User");
             }
-        } 
+        }
 
         public string Status
         {
