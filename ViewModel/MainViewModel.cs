@@ -27,7 +27,6 @@ namespace JunT3.ViewModel
             }
         }
 
-
         ObservableCollection<DataPoint> Points { get; set; } = new ObservableCollection<DataPoint>();
         private PlotModel _plot_model = new PlotModel();
         ObservableCollection<DataPoint> PointsMaxandMin { get; set; } = new ObservableCollection<DataPoint>();
@@ -44,10 +43,9 @@ namespace JunT3.ViewModel
             }
         }
 
+        //Отрисовка графика
         public void SetGrag(object item)
         {
-
-
             if (item != null)
             {
                 Points.Clear();
@@ -129,10 +127,32 @@ namespace JunT3.ViewModel
             {
                 UserTableDatas.Add(new UserTableData(item.Value));
             }
-            PlotModel.Axes.Add(new LinearAxis() { Position = AxisPosition.Bottom, Title = "Дни", Minimum = 0, Maximum = 31 });
+            PlotModel.Axes.Add(new LinearAxis() { Position = AxisPosition.Bottom, Title = "День", Minimum = 0, Maximum = 31 });
             PlotModel.Axes.Add(new LinearAxis() { Position = AxisPosition.Left, Title = "Количество шагов", Minimum = 0, Maximum = 120000 });
             PlotModel.Series.Add(new AreaSeries() { ItemsSource = Points, MarkerType = MarkerType.Circle });
             PlotModel.Series.Add(new LineSeries() { ItemsSource = PointsMaxandMin, LineStyle = LineStyle.None, MarkerSize = 5, MarkerType = MarkerType.Circle });
+        }
+
+        private ActionCommand jsonButtom;
+
+        public ICommand JsonButtom
+        {
+            get
+            {
+                if (jsonButtom == null)
+                {
+                    jsonButtom = new ActionCommand(PerformJsonButtom);
+                }
+
+                return jsonButtom;
+            }
+        }
+
+        //Нажатие кнопки сохрания в JSON файл
+        private void PerformJsonButtom()
+        {
+            UserTableData tempItemSelect = (UserTableData)SelectedCustomer;
+               
         }
     }
 }

@@ -18,6 +18,7 @@ namespace JunT3.Model
         private int maxSteps; // Максимальное значение шагов
         private int minSteps; // Минимальное значение шагов
         private int ammauntDay; //Количество дней
+        private System.Windows.Media.Brush divergenceSteps; //Определение расхожедения минимального и среднего на 20% true рассхождение есть
 
         //Приведение полученных данных для таблицы
         public static UserTableData SetData(List<UserData> dataUser)
@@ -47,6 +48,14 @@ namespace JunT3.Model
                 tempUserTableDatas.MeanSteps = tempMeanSteps / tempUserTableDatas.AmmauntDay;
                 tempUserTableDatas.MaxSteps = tempMaxSteps;
                 tempUserTableDatas.MinSteps = tempMinSteps;
+                if (((tempUserTableDatas.MeanSteps - tempUserTableDatas.MaxSteps) / tempUserTableDatas.MeanSteps) * 100 > 20 || ((tempUserTableDatas.MeanSteps - tempUserTableDatas.MinSteps) / tempUserTableDatas.MeanSteps) * 100 > 20)
+                {
+                    tempUserTableDatas.DivergenceSteps = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(240, 2, 200));
+                }
+                else
+                {
+                    tempUserTableDatas.DivergenceSteps = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(250, 250, 250));
+                }
 
             }
             return tempUserTableDatas;
@@ -54,6 +63,7 @@ namespace JunT3.Model
 
         public UserTableData()
         {
+            this.divergenceSteps = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(24, 200, 200));
         }
 
         public UserTableData(List<UserData> dataUser)
@@ -65,15 +75,27 @@ namespace JunT3.Model
             this.maxSteps = temp.MaxSteps;
             this.minSteps = temp.MinSteps;
             this.ammauntDay = temp.AmmauntDay;
+            this.divergenceSteps = temp.divergenceSteps;
         }
 
-        public UserTableData(string user, int meanSteps, int maxSteps, int minSteps, int ammauntDay)
+        public UserTableData(string user, int meanSteps, int maxSteps, int minSteps, int ammauntDay, System.Windows.Media.Brush divergenceSteps)
         {
             this.user = user;
             this.meanSteps = meanSteps;
             this.maxSteps = maxSteps;
             this.minSteps = minSteps;
             this.ammauntDay = ammauntDay;
+            this.divergenceSteps = divergenceSteps;
+        }
+
+        public System.Windows.Media.Brush DivergenceSteps
+        {
+            get => divergenceSteps;
+            set
+            {
+                divergenceSteps = value;
+                OnPropertyChanged("DivergenceSteps");
+            }
         }
 
         public string User

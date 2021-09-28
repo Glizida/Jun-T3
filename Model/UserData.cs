@@ -29,16 +29,24 @@ namespace JunT3.Model
             try
             {
                 string[] tempPathFile = Directory.GetFiles(Environment.CurrentDirectory + "\\TestData"); //Путь к json файликам
-                List<UserData> tempUserDataList = new List<UserData>();
-                for (int i = 0; i < tempPathFile.Length; i++)
-                {
-                    using (StreamReader sr = new StreamReader(tempPathFile[i]))
+                if (tempPathFile != null && tempPathFile.Length != 0) 
+                { 
+                    List<UserData> tempUserDataList = new List<UserData>();
+                    for (int i = 0; i < tempPathFile.Length; i++)
                     {
-                        tempUserDataList.AddRange(JsonConvert.DeserializeObject<List<UserData>>(sr.ReadToEnd()));
-                        Console.WriteLine(tempUserDataList.Count);
+                        using (StreamReader sr = new StreamReader(tempPathFile[i]))
+                        {
+                            tempUserDataList.AddRange(JsonConvert.DeserializeObject<List<UserData>>(sr.ReadToEnd()));
+                            Console.WriteLine(tempUserDataList.Count);
+                        }
                     }
+                    return tempUserDataList;
                 }
-                return tempUserDataList;
+                else
+                {
+                    MessageBox.Show($"Не найдено не одного JSON файла, пожалуйста положите их в '{Environment.CurrentDirectory}\\TestData' и перезапустите программу ","Файлы не найдены",MessageBoxButton.OK,MessageBoxImage.Error);
+                    return new List<UserData>();
+                }
             }
             catch (Exception e)
             {
