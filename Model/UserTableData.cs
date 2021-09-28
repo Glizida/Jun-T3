@@ -50,7 +50,7 @@ namespace JunT3.Model
                 tempUserTableDatas.MinSteps = tempMinSteps;
                 if (((tempUserTableDatas.MeanSteps - tempUserTableDatas.MaxSteps) / tempUserTableDatas.MeanSteps) * 100 > 20 || ((tempUserTableDatas.MeanSteps - tempUserTableDatas.MinSteps) / tempUserTableDatas.MeanSteps) * 100 > 20)
                 {
-                    tempUserTableDatas.DivergenceSteps = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(240, 2, 200));
+                    tempUserTableDatas.DivergenceSteps = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(250,150,150));
                 }
                 else
                 {

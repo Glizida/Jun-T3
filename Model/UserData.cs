@@ -6,6 +6,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows;
 
+
 namespace JunT3.Model
 {
     class UserData : INotifyPropertyChanged
@@ -16,7 +17,6 @@ namespace JunT3.Model
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
-
         private int rank;
         private string user;
         private string status;

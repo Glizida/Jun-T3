@@ -26,15 +26,27 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0">
-            <Button Margin="5" Width="100"  Content="Сохранить в JSON">
+            <Button Margin="5" Width="120"  Content="Сохранить в JSON">
                 <b:Interaction.Triggers>
                     <b:EventTrigger EventName="Click">
                         <b:InvokeCommandAction Command="{Binding Path=JsonButtom}"/>
                     </b:EventTrigger>
                 </b:Interaction.Triggers>
             </Button>
-            <Button Margin="5" Width="100"  Content="Сохранить в XML"></Button>
-            <Button Margin="5" Width="100"  Content="Сохранить в CSV"></Button>
+            <Button Margin="5" Width="120"  Content="Сохранить в XML">
+                <b:Interaction.Triggers>
+                    <b:EventTrigger EventName="Click">
+                        <b:InvokeCommandAction Command="{Binding Path=XmlButtom}"/>
+                    </b:EventTrigger>
+                </b:Interaction.Triggers>
+            </Button>
+            <!--<Button Margin="5" Width="100"  Content="Сохранить в CSV">
+                <b:Interaction.Triggers>
+                    <b:EventTrigger EventName="Click">
+                        <b:InvokeCommandAction Command="{Binding Path=CSVButtom}"/>
+                    </b:EventTrigger>
+                </b:Interaction.Triggers>
+            </Button>-->
         </StackPanel>
         <DataGrid Grid.Column="0" Grid.Row="1" 
                           AutoGenerateColumns="False" 
