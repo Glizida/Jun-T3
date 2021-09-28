@@ -3,31 +3,39 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:viewModel="clr-namespace:JunT3.ViewModel"
         xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:oxy="http://oxyplot.org/wpf" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        Title="MainWindow" Height="600" Width="1000"
+        >
        
     <Window.DataContext>
         <viewModel:MainViewModel></viewModel:MainViewModel>
     </Window.DataContext>
+    <b:Interaction.Triggers>
+        <b:EventTrigger EventName="Loaded" >
+            <b:InvokeCommandAction Command="{Binding Path=GridLoaded}" />
+        </b:EventTrigger>
+    </b:Interaction.Triggers>
     <Grid>
-        <b:Interaction.Triggers>
-            <b:EventTrigger EventName="Loaded" >
-                <b:InvokeCommandAction Command="{Binding Path=GridLoaded}" />
-            </b:EventTrigger>
-        </b:Interaction.Triggers>
-        <DataGrid AutoGenerateColumns="False" 
-                  Height="auto" 
-                  HorizontalAlignment="Left" 
-                  Name="userDataGrid" 
-                  VerticalAlignment="Top" 
-                  Width="auto"
-                  ItemsSource="{Binding Path=UserTableDatas}"
-        >
-            <DataGrid.Columns >
-                <DataGridTextColumn Header="Пользователь" Binding="{Binding Path=User}" MinWidth="50" />
-                <DataGridTextColumn Header="Срееднее количесво шагов" Binding="{Binding Path=MeanSteps}" MinWidth="50" />
-                <DataGridTextColumn Header="Минимальное кол.во шагов" Binding="{Binding Path=MinSteps}" MinWidth="50" />
-                <DataGridTextColumn Header="Максимальное кол.вщ шагов" Binding="{Binding Path=MaxSteps}" MinWidth="50" />
-            </DataGrid.Columns>
-        </DataGrid>
+        <StackPanel Orientation="Horizontal">
+            <DataGrid AutoGenerateColumns="False" 
+                      Height="auto" 
+                      HorizontalAlignment="Left" 
+                      Name="userDataGrid" 
+                      VerticalAlignment="Top"
+                      IsReadOnly="True"
+                      ItemsSource="{Binding Path=UserTableDatas}"
+                      SelectedItem="{Binding SelectedCustomer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      SelectionMode="Single"
+                      >
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="Пользователь" Binding="{Binding Path=User}" MinWidth="50" />
+                    <DataGridTextColumn Header="Срееднее количесво шагов" Binding="{Binding Path=MeanSteps}" MinWidth="50" />
+                    <DataGridTextColumn Header="Минимальное кол.во шагов" Binding="{Binding Path=MinSteps}" MinWidth="50" />
+                    <DataGridTextColumn Header="Максимальное кол.вщ шагов" Binding="{Binding Path=MaxSteps}" MinWidth="50" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <oxy:PlotView Width="500" Model="{Binding Path=PlotModel}"></oxy:PlotView>
+        </StackPanel>
     </Grid>
 </Window>
