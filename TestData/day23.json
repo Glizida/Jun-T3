@@ -1,0 +1,602 @@
+[
+  {
+    "Rank": 1,
+    "User": "Липатов Александр",
+    "Status": "Finished",
+    "Steps": 53415
+  },
+  {
+    "Rank": 2,
+    "User": "Белоусова Алиса",
+    "Status": "Finished",
+    "Steps": 43461
+  },
+  {
+    "Rank": 3,
+    "User": "Юмашев Леонид",
+    "Status": "Finished",
+    "Steps": 42885
+  },
+  {
+    "Rank": 4,
+    "User": "Мазурин Терентий",
+    "Status": "Finished",
+    "Steps": 39773
+  },
+  {
+    "Rank": 5,
+    "User": "Караваев Святослав",
+    "Status": "Finished",
+    "Steps": 39415
+  },
+  {
+    "Rank": 6,
+    "User": "Оченьбольшой Федор",
+    "Status": "Finished",
+    "Steps": 39333
+  },
+  {
+    "Rank": 7,
+    "User": "Разуваев Виктор",
+    "Status": "Finished",
+    "Steps": 39038
+  },
+  {
+    "Rank": 8,
+    "User": "Ткаченко Пелагея",
+    "Status": "Finished",
+    "Steps": 38222
+  },
+  {
+    "Rank": 9,
+    "User": "Кулатова Влада",
+    "Status": "Finished",
+    "Steps": 37262
+  },
+  {
+    "Rank": 10,
+    "User": "Разпустов Николай",
+    "Status": "Finished",
+    "Steps": 36549
+  },
+  {
+    "Rank": 11,
+    "User": "Безбородов Адам",
+    "Status": "Finished",
+    "Steps": 35704
+  },
+  {
+    "Rank": 12,
+    "User": "Якушев Вениамин",
+    "Status": "Finished",
+    "Steps": 34962
+  },
+  {
+    "Rank": 13,
+    "User": "Косинов Павел",
+    "Status": "Finished",
+    "Steps": 34703
+  },
+  {
+    "Rank": 14,
+    "User": "Капустин Назар",
+    "Status": "Finished",
+    "Steps": 33962
+  },
+  {
+    "Rank": 15,
+    "User": "Катериночкина Дарья",
+    "Status": "Finished",
+    "Steps": 32649
+  },
+  {
+    "Rank": 16,
+    "User": "Лассман Петр",
+    "Status": "Finished",
+    "Steps": 32115
+  },
+  {
+    "Rank": 17,
+    "User": "Тринуликов Сергей",
+    "Status": "Finished",
+    "Steps": 31548
+  },
+  {
+    "Rank": 18,
+    "User": "Турчанинов Лев",
+    "Status": "Finished",
+    "Steps": 30484
+  },
+  {
+    "Rank": 19,
+    "User": "Пименов Александр",
+    "Status": "Finished",
+    "Steps": 30295
+  },
+  {
+    "Rank": 20,
+    "User": "Нарастающий Гавр",
+    "Status": "Finished",
+    "Steps": 29600
+  },
+  {
+    "Rank": 21,
+    "User": "Толстой Жанна",
+    "Status": "Finished",
+    "Steps": 29153
+  },
+  {
+    "Rank": 22,
+    "User": "Кадцын Герман",
+    "Status": "Finished",
+    "Steps": 28823
+  },
+  {
+    "Rank": 23,
+    "User": "Еркулаев Рубен",
+    "Status": "Finished",
+    "Steps": 28697
+  },
+  {
+    "Rank": 24,
+    "User": "Янченко Владлен",
+    "Status": "Finished",
+    "Steps": 28679
+  },
+  {
+    "Rank": 25,
+    "User": "Северинов Фока",
+    "Status": "Finished",
+    "Steps": 28232
+  },
+  {
+    "Rank": 26,
+    "User": "Куксилова Ольга",
+    "Status": "Finished",
+    "Steps": 27863
+  },
+  {
+    "Rank": 27,
+    "User": "Муленко Агния",
+    "Status": "Finished",
+    "Steps": 27550
+  },
+  {
+    "Rank": 28,
+    "User": "Базарова Зинаида",
+    "Status": "Finished",
+    "Steps": 25366
+  },
+  {
+    "Rank": 29,
+    "User": "﻿Александрова Татьяна",
+    "Status": "Finished",
+    "Steps": 24813
+  },
+  {
+    "Rank": 30,
+    "User": "Худовекова Агния",
+    "Status": "Finished",
+    "Steps": 24670
+  },
+  {
+    "Rank": 31,
+    "User": "Мухова Эмма",
+    "Status": "Finished",
+    "Steps": 24378
+  },
+  {
+    "Rank": 32,
+    "User": "Зефирова Майя",
+    "Status": "Finished",
+    "Steps": 23040
+  },
+  {
+    "Rank": 33,
+    "User": "Ноздрёва Жанна",
+    "Status": "Finished",
+    "Steps": 22823
+  },
+  {
+    "Rank": 34,
+    "User": "Порсев Мартын",
+    "Status": "Finished",
+    "Steps": 22794
+  },
+  {
+    "Rank": 35,
+    "User": "Паршиков Лавр",
+    "Status": "Finished",
+    "Steps": 22676
+  },
+  {
+    "Rank": 36,
+    "User": "Горохов Харитон",
+    "Status": "Finished",
+    "Steps": 22464
+  },
+  {
+    "Rank": 37,
+    "User": "Менде Артём",
+    "Status": "Finished",
+    "Steps": 21935
+  },
+  {
+    "Rank": 38,
+    "User": "Веселовский Фока",
+    "Status": "Finished",
+    "Steps": 21494
+  },
+  {
+    "Rank": 39,
+    "User": "Сорокина Жанна",
+    "Status": "Finished",
+    "Steps": 21061
+  },
+  {
+    "Rank": 40,
+    "User": "Скотарев Никон",
+    "Status": "Finished",
+    "Steps": 20909
+  },
+  {
+    "Rank": 41,
+    "User": "Колвецкий Фока",
+    "Status": "Finished",
+    "Steps": 20656
+  },
+  {
+    "Rank": 42,
+    "User": "Коршиков Платон",
+    "Status": "Finished",
+    "Steps": 20029
+  },
+  {
+    "Rank": 43,
+    "User": "Ярный Изольда",
+    "Status": "Finished",
+    "Steps": 19906
+  },
+  {
+    "Rank": 44,
+    "User": "Худовекова Марина",
+    "Status": "Finished",
+    "Steps": 19809
+  },
+  {
+    "Rank": 45,
+    "User": "Ядрищенский Станислав",
+    "Status": "Finished",
+    "Steps": 19460
+  },
+  {
+    "Rank": 46,
+    "User": "Яблочкин Валерьян",
+    "Status": "Finished",
+    "Steps": 19392
+  },
+  {
+    "Rank": 47,
+    "User": "Норин Никита",
+    "Status": "Finished",
+    "Steps": 18791
+  },
+  {
+    "Rank": 48,
+    "User": "Решетников Прокл",
+    "Status": "Finished",
+    "Steps": 18630
+  },
+  {
+    "Rank": 49,
+    "User": "Большая Мария",
+    "Status": "Finished",
+    "Steps": 17771
+  },
+  {
+    "Rank": 50,
+    "User": "Шихранова Ульяна",
+    "Status": "Finished",
+    "Steps": 17602
+  },
+  {
+    "Rank": 51,
+    "User": "Гончарова Алина",
+    "Status": "Finished",
+    "Steps": 17591
+  },
+  {
+    "Rank": 52,
+    "User": "Дёшина Ева",
+    "Status": "Finished",
+    "Steps": 17244
+  },
+  {
+    "Rank": 53,
+    "User": "Абрамова Христина",
+    "Status": "Finished",
+    "Steps": 16585
+  },
+  {
+    "Rank": 54,
+    "User": "Калюта Мстислав",
+    "Status": "Finished",
+    "Steps": 16545
+  },
+  {
+    "Rank": 55,
+    "User": "Ревягин Варфоломей",
+    "Status": "Finished",
+    "Steps": 16142
+  },
+  {
+    "Rank": 56,
+    "User": "Ермишина Эльвира",
+    "Status": "Finished",
+    "Steps": 16115
+  },
+  {
+    "Rank": 57,
+    "User": "Чюличкова Яна",
+    "Status": "Finished",
+    "Steps": 15727
+  },
+  {
+    "Rank": 58,
+    "User": "Рабиновича Регина",
+    "Status": "Finished",
+    "Steps": 15027
+  },
+  {
+    "Rank": 59,
+    "User": "Ворожцов Поликарп",
+    "Status": "Finished",
+    "Steps": 14402
+  },
+  {
+    "Rank": 60,
+    "User": "Путинцев Степан",
+    "Status": "Finished",
+    "Steps": 14317
+  },
+  {
+    "Rank": 61,
+    "User": "Начпустович Елена",
+    "Status": "Finished",
+    "Steps": 14245
+  },
+  {
+    "Rank": 62,
+    "User": "Афанасьева Валентина",
+    "Status": "Finished",
+    "Steps": 13792
+  },
+  {
+    "Rank": 63,
+    "User": "Толкачёва Пелагея",
+    "Status": "Finished",
+    "Steps": 13601
+  },
+  {
+    "Rank": 64,
+    "User": "Шихирин Капитон",
+    "Status": "Finished",
+    "Steps": 13276
+  },
+  {
+    "Rank": 65,
+    "User": "Щеголяева Вероника",
+    "Status": "Finished",
+    "Steps": 12454
+  },
+  {
+    "Rank": 66,
+    "User": "Шурдука Лиана",
+    "Status": "Finished",
+    "Steps": 12385
+  },
+  {
+    "Rank": 67,
+    "User": "Гребенникова Изольда",
+    "Status": "Finished",
+    "Steps": 11969
+  },
+  {
+    "Rank": 68,
+    "User": "Ягужинский Мирослав",
+    "Status": "Finished",
+    "Steps": 11874
+  },
+  {
+    "Rank": 69,
+    "User": "Пашков Агафон",
+    "Status": "Finished",
+    "Steps": 11597
+  },
+  {
+    "Rank": 70,
+    "User": "Тюшняков Борислав",
+    "Status": "Finished",
+    "Steps": 11446
+  },
+  {
+    "Rank": 71,
+    "User": "Убывающая Женя",
+    "Status": "Finished",
+    "Steps": 11400
+  },
+  {
+    "Rank": 72,
+    "User": "Ледовской Гавриил",
+    "Status": "Finished",
+    "Steps": 11392
+  },
+  {
+    "Rank": 73,
+    "User": "Кондурова Эмилия",
+    "Status": "Finished",
+    "Steps": 10262
+  },
+  {
+    "Rank": 74,
+    "User": "Спирьянов Порфирий",
+    "Status": "Finished",
+    "Steps": 9894
+  },
+  {
+    "Rank": 75,
+    "User": "Королева Ярослава",
+    "Status": "Finished",
+    "Steps": 9528
+  },
+  {
+    "Rank": 76,
+    "User": "Поветникова Ираида",
+    "Status": "Finished",
+    "Steps": 9231
+  },
+  {
+    "Rank": 77,
+    "User": "Карюкин Ростислав",
+    "Status": "Finished",
+    "Steps": 8972
+  },
+  {
+    "Rank": 78,
+    "User": "Чукреев Пахом",
+    "Status": "Finished",
+    "Steps": 8945
+  },
+  {
+    "Rank": 79,
+    "User": "Яранов Парфен",
+    "Status": "Finished",
+    "Steps": 8925
+  },
+  {
+    "Rank": 80,
+    "User": "Гречко Лев",
+    "Status": "Finished",
+    "Steps": 8229
+  },
+  {
+    "Rank": 81,
+    "User": "Кристина Ляхова",
+    "Status": "Finished",
+    "Steps": 8228
+  },
+  {
+    "Rank": 82,
+    "User": "Ковшутина Дарья",
+    "Status": "Finished",
+    "Steps": 7829
+  },
+  {
+    "Rank": 83,
+    "User": "Мамонов Герасим",
+    "Status": "Finished",
+    "Steps": 7327
+  },
+  {
+    "Rank": 84,
+    "User": "Шапцев Борислав",
+    "Status": "Finished",
+    "Steps": 7275
+  },
+  {
+    "Rank": 85,
+    "User": "Барышникова Елена",
+    "Status": "Finished",
+    "Steps": 4939
+  },
+  {
+    "Rank": 86,
+    "User": "Разнуликов Павел",
+    "Status": "Finished",
+    "Steps": 4807
+  },
+  {
+    "Rank": 87,
+    "User": "Иканова Тамара",
+    "Status": "Finished",
+    "Steps": 4789
+  },
+  {
+    "Rank": 88,
+    "User": "Стародубцева Полина",
+    "Status": "Finished",
+    "Steps": 4679
+  },
+  {
+    "Rank": 89,
+    "User": "Пыхтина Александра",
+    "Status": "Finished",
+    "Steps": 4161
+  },
+  {
+    "Rank": 90,
+    "User": "Каунайте Мир",
+    "Status": "Finished",
+    "Steps": 4002
+  },
+  {
+    "Rank": 91,
+    "User": "Лепихова Галина",
+    "Status": "Finished",
+    "Steps": 3415
+  },
+  {
+    "Rank": 92,
+    "User": "Тоболенко Прокл",
+    "Status": "Finished",
+    "Steps": 3366
+  },
+  {
+    "Rank": 93,
+    "User": "Максимушкин Пимен",
+    "Status": "Finished",
+    "Steps": 2660
+  },
+  {
+    "Rank": 94,
+    "User": "Кружкова Нона",
+    "Status": "Finished",
+    "Steps": 2343
+  },
+  {
+    "Rank": 95,
+    "User": "Плюхин Максим",
+    "Status": "Finished",
+    "Steps": 1958
+  },
+  {
+    "Rank": 96,
+    "User": "Юхтриц Мирослав",
+    "Status": "Finished",
+    "Steps": 1892
+  },
+  {
+    "Rank": 97,
+    "User": "Малкин Владимир",
+    "Status": "Finished",
+    "Steps": 1868
+  },
+  {
+    "Rank": 98,
+    "User": "Харьков Вячеслав",
+    "Status": "Finished",
+    "Steps": 1389
+  },
+  {
+    "Rank": 99,
+    "User": "Чернов Валерьян",
+    "Status": "Finished",
+    "Steps": 1300
+  },
+  {
+    "Rank": 100,
+    "User": "Пищальникова Нина",
+    "Status": "Finished",
+    "Steps": 1037
+  }
+]
