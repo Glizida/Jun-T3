@@ -49,7 +49,7 @@ namespace JunT3.Model
                 else
                 {
                     MessageBox.Show(
-                        $"Не найдено не одного JSON файла, пожалуйста положите их в '{Environment.CurrentDirectory}\\TestData' и перезапустите программу или загрузите самостоятельно",
+                        $"Не найдено не одного JSON файла, пожалуйста положите их в '{Environment.CurrentDirectory}\\TestData' и перезапустите программу.",
                         "Файлы не найдены", MessageBoxButton.OK, MessageBoxImage.Error);
                     return new List<UserData>();
                 }
