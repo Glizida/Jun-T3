@@ -24,8 +24,7 @@ namespace JunT3.ViewModel
         public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         private Dictionary<string, List<UserData>> _dataUser = UserData.SortedUserData(UserData.GetUserData());
-        
-        
+
         public Dictionary<string, List<UserData>> DataUser
         {
             get => _dataUser;
@@ -35,10 +34,6 @@ namespace JunT3.ViewModel
                 if (CollectionChanged != null) CollectionChanged(DataUser, null);
             }
         }
-       
-
-        
-
 
         private ObservableCollection<UserTableData> _userTableDatas = new ObservableCollection<UserTableData>();
         public ObservableCollection<UserTableData> UserTableDatas
@@ -55,7 +50,6 @@ namespace JunT3.ViewModel
         private PlotModel _plotModel = new PlotModel();
         ObservableCollection<DataPoint> PointsMaxandMin { get; set; } = new ObservableCollection<DataPoint>();
         private PlotModel _plotModelMaxandMin = new PlotModel();
-
 
         public PlotModel PlotModel
         {
@@ -107,7 +101,6 @@ namespace JunT3.ViewModel
         }
 
         private object _selectedCustomer;
-
         public object SelectedCustomer
         {
             get { return _selectedCustomer; }
@@ -130,7 +123,6 @@ namespace JunT3.ViewModel
         }
 
         private ActionCommand _gridLoaded;
-
         public ICommand GridLoaded
         {
             get
@@ -161,7 +153,6 @@ namespace JunT3.ViewModel
         }
 
         private ActionCommand _jsonButtom;
-
         public ICommand JsonButtom
         {
             get
@@ -187,6 +178,10 @@ namespace JunT3.ViewModel
                     {
                         if (item.Key == tempItemSelect.User)
                         {
+                            if (!Directory.Exists($"{Environment.CurrentDirectory}\\SaveData\\"))
+                            {
+                                Directory.CreateDirectory($"{Environment.CurrentDirectory}\\SaveData\\");
+                            }
                             string v = JsonConvert.SerializeObject(AllDataSave.DataSave(item.Value, tempItemSelect), Formatting.Indented);
                             using (StreamWriter streamWrite = new StreamWriter($"{Environment.CurrentDirectory}\\SaveData\\{item.Key}.json", false, System.Text.Encoding.UTF8))
                             {
@@ -208,12 +203,9 @@ namespace JunT3.ViewModel
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-
         }
 
         private ActionCommand _xmlButtom;
-
         public ICommand XmlButtom
         {
             get
@@ -226,6 +218,7 @@ namespace JunT3.ViewModel
                 return _xmlButtom;
             }
         }
+
         // Сохрание XML 
         private void PerformXmlButtom()
         {
@@ -238,6 +231,10 @@ namespace JunT3.ViewModel
                     {
                         if (item.Key == tempItemSelect.User)
                         {
+                            if (!Directory.Exists($"{Environment.CurrentDirectory}\\SaveData\\"))
+                            {
+                                Directory.CreateDirectory($"{Environment.CurrentDirectory}\\SaveData\\");
+                            }
                             string v = JsonConvert.SerializeObject(AllDataSave.DataSave(item.Value, tempItemSelect),
                                 Formatting.Indented);
                             XmlDocument doc = JsonConvert.DeserializeXmlNode(v, "root");

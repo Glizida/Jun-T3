@@ -18,7 +18,7 @@ namespace JunT3.Model
         private int maxSteps; // Максимальное значение шагов
         private int minSteps; // Минимальное значение шагов
         private int ammauntDay; //Количество дней
-        private System.Windows.Media.Brush divergenceSteps; //Определение расхожедения минимального и среднего на 20% true рассхождение есть
+        private System.Windows.Media.Brush divergenceSteps; //Определение расхожедения минимального и среднего на 20%, true рассхождение есть
 
         //Приведение полученных данных для таблицы
         public static UserTableData SetData(List<UserData> dataUser)
@@ -44,7 +44,6 @@ namespace JunT3.Model
                         tempMinSteps = dataUser[i].Steps;
                     }
                 }
-
                 tempUserTableDatas.MeanSteps = tempMeanSteps / tempUserTableDatas.AmmauntDay;
                 tempUserTableDatas.MaxSteps = tempMaxSteps;
                 tempUserTableDatas.MinSteps = tempMinSteps;
@@ -137,7 +136,6 @@ namespace JunT3.Model
                 OnPropertyChanged("MinSteps");
             }
         }
-
         public int AmmauntDay
         {
             get => ammauntDay;
