@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using Microsoft.Win32;
 
 
 namespace JunT3.Model
@@ -12,39 +13,44 @@ namespace JunT3.Model
     class UserData : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
+
         private int rank;
         private string user;
         private string status;
         private int steps;
 
 
-        //Получение данных из всех JSON файлов
+        //Получение данных из всех JSON файлов из папки
         public static List<UserData> GetUserData()
         {
             try
             {
-                string[] tempPathFile = Directory.GetFiles(Environment.CurrentDirectory + "\\TestData"); //Путь к json файликам
-                if (tempPathFile != null && tempPathFile.Length != 0) 
-                { 
+                string[] tempPathFile =
+                    Directory.GetFiles(Environment.CurrentDirectory + "\\TestData"); //Путь к json файликам
+                if (tempPathFile != null && tempPathFile.Length != 0)
+                {
                     List<UserData> tempUserDataList = new List<UserData>();
                     for (int i = 0; i < tempPathFile.Length; i++)
                     {
                         using (StreamReader sr = new StreamReader(tempPathFile[i]))
                         {
                             tempUserDataList.AddRange(JsonConvert.DeserializeObject<List<UserData>>(sr.ReadToEnd()));
-                            Console.WriteLine(tempUserDataList.Count);
                         }
                     }
+
                     return tempUserDataList;
                 }
                 else
                 {
-                    MessageBox.Show($"Не найдено не одного JSON файла, пожалуйста положите их в '{Environment.CurrentDirectory}\\TestData' и перезапустите программу ","Файлы не найдены",MessageBoxButton.OK,MessageBoxImage.Error);
+                    MessageBox.Show(
+                        $"Не найдено не одного JSON файла, пожалуйста положите их в '{Environment.CurrentDirectory}\\TestData' и перезапустите программу или загрузите самостоятельно",
+                        "Файлы не найдены", MessageBoxButton.OK, MessageBoxImage.Error);
                     return new List<UserData>();
                 }
             }
@@ -65,13 +71,14 @@ namespace JunT3.Model
             {
                 if (!tempDictionary.ContainsKey(userData[i].User))
                 {
-                    tempDictionary.Add(userData[i].User, new List<UserData>() { userData[i] });
+                    tempDictionary.Add(userData[i].User, new List<UserData>() {userData[i]});
                 }
                 else
                 {
                     tempDictionary[userData[i].User].Add(userData[i]);
                 }
             }
+
             return tempDictionary;
         }
 
@@ -127,6 +134,5 @@ namespace JunT3.Model
                 OnPropertyChanged("Steps");
             }
         }
-
     }
 }

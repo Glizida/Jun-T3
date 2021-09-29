@@ -8,6 +8,7 @@ using OxyPlot.Series;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -18,11 +19,25 @@ using Formatting = Newtonsoft.Json.Formatting;
 
 namespace JunT3.ViewModel
 {
-    class MainViewModel : INotifyPropertyChanged
+    class MainViewModel : INotifyCollectionChanged
     {
-        private Dictionary<string, List<UserData>> _dataUser = UserData.SortedUserData(UserData.GetUserData());
-        public Dictionary<string, List<UserData>> DataUser => _dataUser;
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
 
+        private Dictionary<string, List<UserData>> _dataUser = UserData.SortedUserData(UserData.GetUserData());
+        
+        
+        public Dictionary<string, List<UserData>> DataUser
+        {
+            get => _dataUser;
+            set
+            {
+                _dataUser = value;
+                if (CollectionChanged != null) CollectionChanged(DataUser, null);
+            }
+        }
+       
+
+        
 
 
         private ObservableCollection<UserTableData> _userTableDatas = new ObservableCollection<UserTableData>();
@@ -32,22 +47,22 @@ namespace JunT3.ViewModel
             set
             {
                 _userTableDatas = value;
-                OnPropertyChanged("UserTableDatas");
+                if (CollectionChanged != null) CollectionChanged(UserTableDatas, null);
             }
         }
 
         ObservableCollection<DataPoint> Points { get; set; } = new ObservableCollection<DataPoint>();
-        private PlotModel _plot_model = new PlotModel();
+        private PlotModel _plotModel = new PlotModel();
         ObservableCollection<DataPoint> PointsMaxandMin { get; set; } = new ObservableCollection<DataPoint>();
-        private PlotModel _plot_modelMaxandMin = new PlotModel();
+        private PlotModel _plotModelMaxandMin = new PlotModel();
 
 
         public PlotModel PlotModel
         {
-            get { return _plot_model; }
+            get { return _plotModel; }
             set
             {
-                _plot_model = value;
+                _plotModel = value;
                 OnPropertyChanged("PlotModel");
             }
         }
@@ -114,24 +129,26 @@ namespace JunT3.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
 
-        private ActionCommand gridLoaded;
+        private ActionCommand _gridLoaded;
 
         public ICommand GridLoaded
         {
             get
             {
-                if (gridLoaded == null)
+                if (_gridLoaded == null)
                 {
-                    gridLoaded = new ActionCommand(PerformGridLoaded);
+                    _gridLoaded = new ActionCommand(PerformGridLoaded);
                 }
 
-                return gridLoaded;
+                return _gridLoaded;
             }
         }
 
         //Заполнение данными после отрисовки Grid
         private void PerformGridLoaded()
         {
+            UserTableDatas.CollectionChanged += (a, b) => OnPropertyChanged("UserTableDatas");
+
             foreach (var item in DataUser)
             {
                 UserTableDatas.Add(new UserTableData(item.Value));
@@ -143,18 +160,18 @@ namespace JunT3.ViewModel
             PlotModel.Series.Add(new LineSeries() { ItemsSource = PointsMaxandMin, LineStyle = LineStyle.None, MarkerSize = 5, MarkerType = MarkerType.Circle });
         }
 
-        private ActionCommand jsonButtom;
+        private ActionCommand _jsonButtom;
 
         public ICommand JsonButtom
         {
             get
             {
-                if (jsonButtom == null)
+                if (_jsonButtom == null)
                 {
-                    jsonButtom = new ActionCommand(PerformJsonButtom);
+                    _jsonButtom = new ActionCommand(PerformJsonButtom);
                 }
 
-                return jsonButtom;
+                return _jsonButtom;
             }
         }
 
@@ -175,6 +192,10 @@ namespace JunT3.ViewModel
                             {
                                 streamWrite.WriteLine(v);
                             }
+
+                            MessageBox.Show(
+                                $"Сохранено успешно в {Environment.CurrentDirectory}\\SaveData\\{item.Key}.json",
+                                "Информация!", MessageBoxButton.OK, MessageBoxImage.Information);
                         }
                     }
                 }
@@ -191,18 +212,18 @@ namespace JunT3.ViewModel
 
         }
 
-        private ActionCommand xmlButtom;
+        private ActionCommand _xmlButtom;
 
         public ICommand XmlButtom
         {
             get
             {
-                if (xmlButtom == null)
+                if (_xmlButtom == null)
                 {
-                    xmlButtom = new ActionCommand(PerformXmlButtom);
+                    _xmlButtom = new ActionCommand(PerformXmlButtom);
                 }
 
-                return xmlButtom;
+                return _xmlButtom;
             }
         }
         // Сохрание XML 
@@ -221,6 +242,10 @@ namespace JunT3.ViewModel
                                 Formatting.Indented);
                             XmlDocument doc = JsonConvert.DeserializeXmlNode(v, "root");
                             doc.Save($"{Environment.CurrentDirectory}\\SaveData\\{item.Key}.xml");
+                            MessageBox.Show(
+                                $"Сохранено успешно в {Environment.CurrentDirectory}\\SaveData\\{item.Key}.xml",
+                                "Информация!", MessageBoxButton.OK, MessageBoxImage.Information);
+
                         }
                     }
                 }
@@ -235,48 +260,6 @@ namespace JunT3.ViewModel
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
-        //private ActionCommand cSVButtom;
-
-        //public ICommand CSVButtom
-        //{
-        //    get
-        //    {
-        //        if (cSVButtom == null)
-        //        {
-        //            cSVButtom = new ActionCommand(PerformCSVButtom);
-        //        }
-
-        //        return cSVButtom;
-        //    }
-        //}
-        //Сохранение CSV
-        //private void PerformCSVButtom()
-        //{
-        //    try
-        //    {
-        //        if ((UserTableData)SelectedCustomer != null)
-        //        {
-        //            UserTableData tempItemSelect = (UserTableData)SelectedCustomer;
-        //            foreach (var item in DataUser)
-        //            {
-        //                if (item.Key == tempItemSelect.User)
-        //                {
-
-        //                }
-        //            }
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Пожалуйста выберите человека по которому небходимо сохранить данные", "Ошибка",
-        //                MessageBoxButton.OK, MessageBoxImage.Exclamation);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-        //    }
-        //}
     }
 }
 

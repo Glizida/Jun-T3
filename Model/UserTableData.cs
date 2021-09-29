@@ -63,7 +63,7 @@ namespace JunT3.Model
 
         public UserTableData()
         {
-            this.divergenceSteps = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(24, 200, 200));
+            this.divergenceSteps = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(250, 250, 250));
         }
 
         public UserTableData(List<UserData> dataUser)
